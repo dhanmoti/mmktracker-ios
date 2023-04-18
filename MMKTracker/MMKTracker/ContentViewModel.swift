@@ -53,10 +53,10 @@ extension ContentView {
                     if let document = document, document.exists {
                         let data = document.data()
                         if let data = data,
-                           let lUpdate = data["lastUpdate"] as? String,
+                           let lUpdate = data["lastUpdate"] as? Timestamp,
                            let rates = data["rates"] as? [[String: String]] {
                             
-                            self?.lastUpdate = lUpdate
+                            self?.lastUpdate = "\( lUpdate.dateValue() )"
                             self?.repo.removeAll()
                             
                             for r in rates {
