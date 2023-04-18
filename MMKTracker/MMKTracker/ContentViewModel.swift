@@ -40,9 +40,9 @@ extension ContentView {
         }
         
         
-        //--currencies/centralbank
+        //--/central-bank-mm/decorated-currencies-rates
         func fetch() {
-            let docRef = db.collection("currencies").document("centralbank")
+            let docRef = db.collection("central-bank-mm").document("decorated-currencies-rates")
 
             docRef.getDocument { [weak self] (document, error) in
                     guard error == nil else {
