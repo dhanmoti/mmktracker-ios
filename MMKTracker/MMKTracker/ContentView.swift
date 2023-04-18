@@ -12,7 +12,7 @@ struct ContentView: View {
     @ObservedObject var vm: ViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 List {
                     ForEach(vm.currencies) { c in
@@ -45,6 +45,7 @@ struct ContentView: View {
                 .onAppear {
                     vm.fetch()
                 }
+                .navigationTitle("MMK Rates")
                 
                 VStack {
                     Text("Last Update: \(vm.lastUpdate)")
